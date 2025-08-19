@@ -1,0 +1,15 @@
+global:
+  mongodb:
+    auth:
+      usernames: 
+        - "user1"
+      databases: 
+        - "mydatabase"
+      existingSecret: my-mongo-secret
+    service:
+      host: "172.31.5.77"
+  argocd:
+    frontend:
+      syncWave: "10"
+    backend:
+      syncWave: "0"
