@@ -116,7 +116,7 @@ autoscaling:
 volumes:
   - name: database-storage
     persistentVolumeClaim:
-      claimName: database-pvc
+      claimName: database-mssql-pvc
 # - name: foo
 #   secret:
 #     secretName: mysecret
