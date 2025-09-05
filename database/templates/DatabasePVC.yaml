@@ -1,0 +1,15 @@
+{{- if .Values.persistentVolumeClaim.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "Database.fullname" . }}-pvc
+spec:
+  {{- with .Values.persistentVolumeClaim }}
+  accessModes:
+    {{- .accessModes | toYaml | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .storage | default "5Gi" }}
+  storageClassName: {{ .storageClassName | default "standard" }}
+  {{- end }}
+{{- end }}

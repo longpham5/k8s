@@ -1,0 +1,16 @@
+global:
+  database:
+    CatalogConnection:
+      host: database-mssql
+      port: 1433
+      user: sa
+      password: $(SA_PASSWORD)
+      name: CatalogDb
+    IdentityConnection:
+      host: database-mssql
+      port: 1433
+      user: sa
+      password: $(SA_PASSWORD)
+      name: IdentityDb
+  sensitive:
+    SA_PASSWORD: "Your_password123"
